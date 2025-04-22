@@ -50,9 +50,9 @@ public class OwnerController {
 		return repository.count();
 	}
 	
-	@GetMapping("/subjects/searchignorecase/{code}")
-	public Owner getSubjectByNameIgnoreCase(@PathVariable String name){
-	return repository.findByNameIgnoreCase(name);
+	@GetMapping("/owner/searchignorecase/{name}")
+	public Owner getOwnerByNameIgnoreCase(@PathVariable String name) {
+		return repository.findByNameIgnoreCase(name);
 	}
 	
 }

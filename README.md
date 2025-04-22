@@ -14,7 +14,7 @@ A simple RESTful API built with **Spring Boot** to manage real estate listings a
 
 ## Features
 
-- Manage real estate entries (`/subjects`)
+- Manage real estate entries (`/realestate`)
   - Add, update, delete, fetch all, or fetch by ID
   - Filter listings by owner
 - Manage owners (`/owner`)

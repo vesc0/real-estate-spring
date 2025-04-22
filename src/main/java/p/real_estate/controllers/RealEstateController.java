@@ -21,33 +21,33 @@ public class RealEstateController {
 	@Autowired
 	private RealEstateRepository repository;
 	
-	@GetMapping("/subjects")
+	@GetMapping("/realestate")
 	public List<RealEstate> getAll(){
 		return (List<RealEstate>) repository.findAll();
 	}
 	
-	@GetMapping("/subjects/{id}")
+	@GetMapping("/realestate/{id}")
 	public RealEstate getOne(@PathVariable int id){
 		return repository.findById(id).orElse(null);
 	}
 	
-	@PostMapping("/subjects")
+	@PostMapping("/realestate")
 	public RealEstate createRealEstate(@RequestBody RealEstate realEstate){
 		return repository.save(realEstate);
 	}
 	
-	@DeleteMapping("/subjects/{id}")
+	@DeleteMapping("/realestate/{id}")
 	public void deleteRealEstate(@PathVariable int id){
 		repository.deleteById(id);
 	}
 	
-	@PutMapping("/subjects/{id}")
+	@PutMapping("/realestate/{id}")
 	public RealEstate updateRealEstate(@PathVariable int id, @RequestBody RealEstate realEstate){
 		return repository.save(realEstate);
 	}
 	
-	@GetMapping("/subjects/")
-	public List<RealEstate> getSubjectsByOwner(@RequestBody Owner owner){
-	return repository.findAllRealEstatesByOwner(owner);
+	@PostMapping("/realestate/by-owner")
+	public List<RealEstate> getRealEstatesByOwner(@RequestBody Owner owner){
+		return repository.findAllRealEstatesByOwner(owner);
 	}
 }
